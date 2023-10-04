@@ -1,0 +1,13 @@
+s = 12
+x = [1, 2, 22, 8, 4, 5, 6]
+x = sorted(x)
+print(x)
+
+for elem in x:
+    if elem > s:
+        break
+    if s - elem in x and s - elem != elem:
+        print(elem, s - elem)
+        break
+else:
+    print(None)
