@@ -1,0 +1,24 @@
+s = "абвгдже"
+n = len(list(set(s)))
+
+
+def f(data, n, ans, lst):
+    if n <= 0:
+        lst.append(ans)
+    else:
+        for i in range(len(data)):
+            f(data, n - 1, ans + data[i], lst)
+    return lst
+
+
+data = ['0', '1']
+k = 0
+c = 0
+while True:
+    c += 1
+    k = f(data, c, "", [])
+    if len(k) >= n:
+        ans = c
+        break
+
+print(ans, k)
