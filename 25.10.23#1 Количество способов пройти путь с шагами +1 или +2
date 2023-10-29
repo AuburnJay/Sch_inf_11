@@ -1,0 +1,30 @@
+count = 0
+
+
+def f(n, data):
+    global count
+    if n <= 0:
+        data.append(0)
+        count += 1
+        print(data)
+    elif n == 1:
+        data.append(1)
+        f(0, data)
+    else:
+        f(n - 1, data + [n])
+        f(n - 2, data + [n])
+        return count
+
+n = 8
+print('1 способ: ', f(n, []))
+
+
+data = [0] * (n - 1) + [1]
+while True:
+    if n == 0:
+        break
+    data[n - 2] += data[n - 1]
+    data[n - 3] += data[n - 1]
+    n -= 1
+# print(data)
+print('2 способ: ', data[-1] - 1)
