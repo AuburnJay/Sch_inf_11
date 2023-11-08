@@ -1,0 +1,9 @@
+from itertools import product
+
+data = ['A', 'З', 'Л', 'О', 'П', 'Ь']
+count = 0
+for elem in product(data, repeat=6):
+    count += 1
+    if elem.count('Ь') <= 1 and elem.count('A') == 1 and elem.count('З') <= 2:
+        print(elem, count)
+        break
