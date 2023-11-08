@@ -1,0 +1,13 @@
+data = '0123456789A'
+
+n = 1331 ** 650 - 55 * 121 ** 610 + 77 * 11 ** 510 - 3 * 11 ** 100 - 221
+print(n)
+
+new = ''
+while n >= 11:
+    c = n % 11
+    new += data[c]
+    n //= 11
+
+print(new)
+print(new.count('A'))
