@@ -1,0 +1,17 @@
+ans = []
+
+for n in range(1000):
+    n_bin = bin(n)[2:]
+    k = len(n_bin)
+    if k % 2 == 0:
+        r = n_bin[:k // 2] + '1' + n_bin[k // 2:]
+    else:
+        r = n_bin
+    r = int(r, 2)
+    print(r)
+    ans.append(r)
+
+ans.sort()
+for elem in ans:
+    if elem <= 26:
+        print(elem)
