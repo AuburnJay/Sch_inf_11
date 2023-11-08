@@ -1,0 +1,35 @@
+from turtle import *
+
+color('black', 'red')
+scale = 2
+limit = 300
+speed(10)
+
+left(90)
+forward(100 * scale)
+right(90)
+forward(100 * scale)
+right(45)
+pd()
+
+begin_fill()
+for i in range(2):
+    forward(20 * scale)
+    right(90)
+    forward(30 * scale)
+    right(90)
+end_fill()
+pu()
+
+canvas = getcanvas()
+count_dot = 0
+for x in range(-limit * scale, limit * scale, scale):
+    for y in range(-limit * scale, limit * scale, scale):
+        item = canvas.find_overlapping(x, y, x, y)
+        if len(item) == 1 and item[0] == 5:
+            goto(x, y)
+            dot(3)
+            print(item)
+            count_dot += 1
+
+print(count_dot)
